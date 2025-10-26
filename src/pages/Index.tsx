@@ -1,17 +1,8 @@
 import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
 import CommunityShowcase from "@/components/CommunityShowcase";
-import axios from "axios";
-import { useState, useEffect } from "react";
 
 const Index = () => {
-	const orchestratorUrl =  import.meta.env.VITE_ORCHESTRATOR_URL || "http://localhost:3001";
-	console.log("orchestratorUrl", orchestratorUrl);
-	useEffect(() => {
-		axios.get(`${orchestratorUrl}/test`, {	headers: { "ngrok-skip-browser-warning": "true" } })
-			.then(res => console.log("✅ Response:", res.data))
-			.catch(err => console.error("❌ Error:", err));
-	}, [orchestratorUrl]);
 	return (
 		<div className="min-h-screen">
 			<Navbar />
